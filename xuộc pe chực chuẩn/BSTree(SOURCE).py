@@ -161,7 +161,75 @@ class BSTree:
             if p.right!=None:
                 my.EnQueue(p.right)
         return None
+###################################################
+    def post_order_search_last(self, node): # Search for last node with post_order
+        if node is None:
+            return None
+
+        stack1 = []
+        stack2 = []
+        last_valid_node = None  # To store the last valid node
+
+        stack1.append(node)
+
+        while stack1:
+            current = stack1.pop()
+            stack2.append(current)
+
+            if current.left:
+                stack1.append(current.left)
+            if current.right:
+                stack1.append(current.right)
+
+        while stack2:
+            p = stack2.pop()
+            if p.left is not None and p.right is not None and p.data.Age % 2 != 0:
+                last_valid_node = p  # Update last_valid_node
+
+        return last_valid_node  # Return the last valid node found
     
+    def pre_order_search_last(self, node):  # Search for last node with pre_order
+        if node is None:
+            return None
+
+        last_valid_node = None
+        stack = []
+        stack.append(node)
+
+        while stack:
+            current = stack.pop()
+            if current.left is not None and current.right is not None and current.data.Age % 2 != 0:
+                last_valid_node = current
+
+            if current.right:
+                stack.append(current.right)
+            if current.left:
+                stack.append(current.left)
+
+        return last_valid_node
+
+
+    def in_order_search(self, node): # # Search for last node with in_order
+        stack = []
+        current = node
+        last_valid_node = None
+
+        while True:
+            if current is not None:
+                stack.append(current)
+                current = current.left
+            elif stack:
+                current = stack.pop()
+                if current.left is not   
+     None and current.right is not None and current.data.Age % 2 != 0:
+                    last_valid_node = current
+
+                current = current.right
+            else:
+                break
+
+        return last_valid_node
+##################    
     def post_order_search(self,node):
         count = 0
         if node is None:
@@ -190,7 +258,7 @@ class BSTree:
                 return del_val
 
     ####################
-    def pre_order_traversal(self ,node):
+    def pre_order_search(self ,node):
         if node is None:
             return
         count = 0
@@ -213,7 +281,7 @@ class BSTree:
                 stack.append(current.left)
 
 
-    def in_order_traversal(self,node):
+    def in_order_search(self,node):
         stack = []
         current = node
         count = 0

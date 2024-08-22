@@ -172,13 +172,14 @@ class MyList:
         current = self.head
         prev = None
         while current is not None:
+            prev = current
+            current = current.next
             if self.is_square(current.data.Age):#sửa điều kiện theo yêu cầu đề bài
                 count += 1
                 if count == 2: #count bằng bao nhiêu xoá thứ tự bấy nhiê
                     prev.next = current.next
                     return
-            prev = current
-            current = current.next
+
     def deleteLastNode(self):
         if self.head is None:
             return
