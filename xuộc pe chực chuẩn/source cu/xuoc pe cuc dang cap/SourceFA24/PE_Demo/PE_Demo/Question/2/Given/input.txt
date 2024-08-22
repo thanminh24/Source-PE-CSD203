@@ -1,0 +1,12 @@
+line 0 - The next line is line 1 (f1)
+A   B  C   D  E   F  G   X   Y 
+35  26  33   -36   24   25   23   56  105
+line 3 - The next line is line 4 (f2)
+A   B  C   D  E   F  G   X   Y 
+34  21  32   36   24   25   23   56  99
+line 6 - The next line is line 7 (f3)
+A   B   C   D  E   F   G   H   Y   Z AQ
+25  45  21 17 34  30   50   15  18 28 32
+line 9 - The next line is line 10 (f4)
+A   B  C   D  E   F  G   X   Y 
+25  16  23   28   24   15   18   56  26
