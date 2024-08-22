@@ -159,11 +159,11 @@ while(S is not empty)
     
     print(' '.join(euler_cycle))
 
-def isIsolated(self, vertex):
-    for y in range(len(self.a)):
-        if self.a[vertex][y] != 0:
-            return False
-    return True
+    def isIsolated(self, vertex):
+        for y in range(len(self.a)):
+            if self.a[vertex][y] != 0:
+                return False
+        return True
 
 
 
